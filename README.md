@@ -33,3 +33,8 @@ Ce projet est un **portfolio personnel dynamique** développé en **PHP** selon 
 
 Le projet suit une architecture **MVC (Model – View – Controller)** :
 
+## ⚙️ Installation
+
+**Cloner le repository**
+```bash
+git clone https://github.com/Ryenn972/portfolio.git
