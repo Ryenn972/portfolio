@@ -36,7 +36,17 @@ Ce projet est un **portfolio personnel dynamique** développé en **PHP** selon 
 
 Le projet suit une architecture **MVC (Model – View – Controller)** :
 
-## ⚙️ Installation
+---
+
+## Aperçu
+
+###  Home
+![Home](assets/readme/homepage.png)
+
+### Dashboard
+![Dashboard](assets/readme/dashboard.png)
+
+## Installation
 
 **Cloner le repository**
 ```bash
