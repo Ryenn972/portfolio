@@ -41,10 +41,10 @@ Le projet suit une architecture **MVC (Model – View – Controller)** :
 ## Aperçu
 
 ###  Home
-![Home](assets/readme/homepage.png)
+![Home](readme/homepage.png)
 
 ### Dashboard
-![Dashboard](assets/readme/dashboard.png)
+![Dashboard](readme/dashboard.png)
 
 ## Installation
 
