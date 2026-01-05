@@ -1,5 +1,8 @@
 # Portfolio – PHP MVC
 
+**Live demo** :  
+https://ryennmithcatan.sites.3wa.io/ue6/mvc/portfolio/index.php
+
 Ce projet est un **portfolio personnel dynamique** développé en **PHP** selon une **architecture MVC**, permettant de présenter des projets, des compétences et de gérer le contenu via un **dashboard administrateur**.
 
 ---
