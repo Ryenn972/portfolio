@@ -1,0 +1,61 @@
+<section class="section-edit-project">
+    <h2>Edit Project</h2>
+
+    <?php if (!empty($errors)): ?>
+        <p class="error-message"><?= htmlspecialchars(implode(' | ', $errors)) ?></p>
+    <?php endif; ?>
+
+    <form action="index.php?route=update_project&id=<?= $project->getId() ?>" method="POST" enctype="multipart/form-data">
+        <div>
+            <label for="title">Title :</label>
+            <input type="text" name="title" value="<?= htmlspecialchars($project->getTitle()) ?>" required>
+        </div>
+
+        <div>
+            <label for="category">Category :</label>
+            <select name="category" required>
+                <?php foreach ($categories as $cat): ?>
+                    <option value="<?= $cat['id'] ?>" <?= $cat['id'] == $project->getCategoryId() ? 'selected' : '' ?>>
+                        <?= htmlspecialchars($cat['name']) ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+
+        <div>
+            <label>Labels :</label>
+            <div class="checkbox-labels">
+                <?php 
+                $projectLabels = array_column($project->getLabels(), 'name'); // labels actuels
+                foreach ($labels as $label): 
+                ?>
+                    <label>
+                        <input 
+                            type="checkbox" 
+                            name="labels[]" 
+                            value="<?= $label['id'] ?>" 
+                            <?= in_array($label['name'], $projectLabels) ? 'checked' : '' ?>
+                        >
+                        <?= htmlspecialchars($label['name']) ?>
+                    </label>
+                <?php endforeach; ?>
+            </div>
+        </div>
+
+        <div>
+            <label for="description">Description :</label>
+            <textarea name="description" required><?= htmlspecialchars($project->getProjectDescription()) ?></textarea>
+        </div>
+        
+        <div>
+            <label for="projectImage">Project Image :</label>
+            <input type="file" name="projectImage" accept="image/*">
+            <?php if ($project->getProjectImg()): ?>
+                <p>Current image:</p>
+                <img src="assets/img/<?= htmlspecialchars($project->getProjectImg()) ?>" alt="Project image" class="preview-image">
+            <?php endif; ?>
+        </div>
+
+        <button type="submit">Save Changes</button>
+    </form>
+</section>

@@ -1,0 +1,56 @@
+<section class="section-edit-project">
+    <h2>Add New Project</h2>
+
+    <?php if (!empty($errors)): ?>
+        <p class="error-message"><?= htmlspecialchars(implode(' | ', $errors)) ?></p>
+    <?php endif; ?>
+
+    <form action="index.php?route=create_project" method="POST" enctype="multipart/form-data">
+
+        <div>
+            <label>Title :</label>
+            <input type="text" name="title" required>
+        </div>
+
+        <div>
+            <label>Category :</label>
+            <select name="category" required>
+                <?php foreach ($categories as $cat): ?>
+                    <option value="<?= $cat['id'] ?>">
+                        <?= htmlspecialchars($cat['name']) ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+
+        <div>
+            <label>Labels :</label>
+            <div class="checkbox-labels">
+                <?php foreach ($labels as $label): ?>
+                    <label>
+                        <input type="checkbox" name="labels[]" value="<?= $label['id'] ?>">
+                        <?= htmlspecialchars($label['name']) ?>
+                    </label>
+                <?php endforeach; ?>
+            </div>
+        </div>
+
+        <div>
+            <label>Description :</label>
+            <textarea name="description" required></textarea>
+        </div>
+
+        <div>
+            <label>Project Link :</label>
+            <input type="text" name="link" placeholder="https://...">
+        </div>
+
+        <div>
+            <label>Image :</label>
+            <input type="file" name="image" accept="image/*">
+        </div>
+
+        <button type="submit">Add project</button>
+
+    </form>
+</section>

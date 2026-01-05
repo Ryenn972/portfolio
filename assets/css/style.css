@@ -1,0 +1,1018 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(31, 31, 31);
+  color: rgb(200, 200, 200);
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  width: 100%;
+  padding: 1rem;
+}
+body a {
+  text-decoration: none;
+  color: rgb(255, 212, 0);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5em;
+  align-items: center;
+}
+header h1 {
+  color: rgb(255, 212, 0);
+  margin: 0;
+}
+header h1:hover {
+  text-decoration: underline;
+}
+header a:hover {
+  text-decoration: underline;
+}
+header .logout {
+  color: red;
+}
+
+.container,
+footer {
+  text-align: center;
+}
+
+.section-introduction {
+  margin-top: 5em;
+  padding: 0 1rem;
+  text-align: center;
+}
+.section-introduction h2 {
+  font-size: 2rem;
+  color: rgb(255, 212, 0);
+  margin-bottom: 2em;
+}
+.section-introduction .article-introduction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
+.section-introduction .article-introduction .photo-cv {
+  width: 180px;
+  max-width: 70%;
+  border-radius: 2em;
+  border: 2px solid rgb(200, 200, 200);
+  box-shadow: rgba(255, 212, 0, 0.15) 0px 4px 8px, rgba(0, 0, 0, 0.08) 0px 2px 4px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.section-introduction .article-introduction .photo-cv:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: rgba(255, 212, 0, 0.3) 0px 8px 16px, rgba(0, 0, 0, 0.15) 0px 4px 8px;
+}
+.section-introduction p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  color: rgb(200, 200, 200);
+  text-align: center;
+}
+
+.section-projects {
+  margin-top: 5em;
+}
+.section-projects h2 {
+  text-align: center;
+  margin-bottom: 2.5em;
+  font-size: 2rem;
+  color: rgb(255, 212, 0);
+}
+.section-projects .div-projects {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+.section-projects .div-projects .article-project {
+  background-color: rgb(61, 61, 61);
+  border-radius: 1em;
+  border: 1px solid transparent;
+  overflow: hidden;
+  box-shadow: rgba(255, 212, 0, 0.15) 0px 4px 8px, rgba(0, 0, 0, 0.08) 0px 2px 4px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.section-projects .div-projects .article-project:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: #ffd400;
+  box-shadow: rgba(255, 212, 0, 0.3) 0px 8px 16px, rgba(0, 0, 0, 0.15) 0px 4px 8px;
+}
+.section-projects .div-projects .article-project .img-project {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.section-projects .div-projects .article-project .div-project {
+  flex-grow: 1;
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.section-projects .div-projects .article-project .div-project h3 {
+  margin: 0 0 0.6em;
+  font-size: 1.3rem;
+  color: rgb(255, 212, 0);
+}
+.section-projects .div-projects .article-project .div-project .p-categories {
+  margin-bottom: 1.2em;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+.section-projects .div-projects .article-project .div-project .div-labels {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  margin-bottom: 1.4em;
+}
+.section-projects .div-projects .article-project .div-project .div-labels > p {
+  font-weight: 600;
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgb(255, 212, 0);
+}
+.section-projects .div-projects .article-project .div-project .div-labels div {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+.section-projects .div-projects .article-project .div-project .div-labels div .labels {
+  background-color: rgb(255, 146, 30);
+  color: rgb(31, 31, 31);
+  border-radius: 1em;
+  padding: 0.4em 0.9em;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: transform 0.2s ease;
+}
+.section-projects .div-projects .article-project .div-project .div-labels div .labels:hover {
+  transform: translateY(-3px);
+}
+.section-projects .div-projects .article-project .div-project .div-buttons-project {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 1em;
+}
+.section-projects .div-projects .article-project .div-project .div-buttons-project .a-project:hover {
+  text-decoration: underline;
+}
+.section-projects .div-projects .article-project .div-project .div-buttons-project .link-projects {
+  background-color: rgb(255, 212, 0);
+  color: rgb(31, 31, 31);
+  border-radius: 1.2em;
+  padding: 0.8em 1.5em;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.section-projects .div-projects .article-project .div-project .div-buttons-project .link-projects:hover {
+  background-color: rgb(215, 172, 0);
+  transform: translateY(-3px);
+}
+
+.section-skills {
+  margin-top: 6em;
+  /* Container des skills */
+  /* Skill block */
+  /* Barre de progression */
+}
+.section-skills h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2em;
+}
+.section-skills h3 {
+  color: rgb(255, 212, 0);
+  text-align: center;
+  margin-bottom: 2em;
+  font-size: 1.6rem;
+}
+.section-skills article {
+  background-color: rgb(61, 61, 61);
+  padding: 2em 2em 4em;
+  border-radius: 2em;
+  box-shadow: rgba(255, 212, 0, 0.15) 0px 4px 8px, rgba(0, 0, 0, 0.08) 0px 2px 4px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  margin-top: 4em;
+}
+.section-skills article:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: rgba(255, 212, 0, 0.3) 0px 8px 16px, rgba(0, 0, 0, 0.15) 0px 4px 8px;
+}
+.section-skills .div-webdev,
+.section-skills .div-transversal {
+  display: grid;
+  gap: 2.5em;
+  grid-template-columns: 1fr;
+}
+.section-skills .skill {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+}
+.section-skills .skill-name {
+  font-weight: 600;
+  font-size: 1rem;
+}
+.section-skills .skill-bar {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  background-color: #242424;
+  border-radius: 1em;
+  overflow: hidden;
+}
+.section-skills .skill-bar-fill {
+  height: 100%;
+  background-color: rgb(255, 212, 0);
+  border-radius: 1em;
+  width: 0;
+  animation: fillBar 1.2s ease forwards;
+}
+@keyframes fillBar {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--target-width);
+  }
+}
+.section-skills .skill-percent {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.section-contact {
+  margin-top: 10em;
+  padding: 2em 1em;
+}
+.section-contact form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  background-color: rgb(61, 61, 61);
+  padding: 2.5em;
+  border-radius: 2em;
+  box-shadow: rgba(255, 212, 0, 0.15) 0px 4px 8px, rgba(0, 0, 0, 0.08) 0px 2px 4px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.section-contact form:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: rgba(255, 212, 0, 0.3) 0px 8px 16px, rgba(0, 0, 0, 0.15) 0px 4px 8px;
+}
+.section-contact form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+}
+.section-contact form div label {
+  font-weight: 600;
+  color: rgb(255, 212, 0);
+  font-size: 1.1em;
+}
+.section-contact form div input,
+.section-contact form div textarea {
+  font-size: 1em;
+  padding: 1em;
+  border-radius: 0.8em;
+  background-color: rgb(71, 71, 71);
+  color: rgb(200, 200, 200);
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+.section-contact form div textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+.section-contact form div input:focus,
+.section-contact form div textarea:focus {
+  border-color: rgb(255, 212, 0);
+  box-shadow: 0 0 8px rgba(255, 212, 0, 0.25);
+  outline: none;
+}
+.section-contact form button {
+  font-size: 1.1em;
+  padding: 0.8em 1.4em;
+  background-color: rgb(255, 212, 0);
+  border-radius: 0.8em;
+  color: rgb(31, 31, 31);
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.section-contact form button:hover {
+  background-color: rgb(215, 172, 0);
+  transform: translateY(-2px);
+}
+.section-contact form button:active {
+  transform: translateY(0);
+}
+
+.section-networks {
+  margin-top: 10em;
+  text-align: center;
+}
+.section-networks nav {
+  display: flex;
+  justify-content: center;
+  gap: 3em;
+  flex-wrap: wrap;
+  padding: 3em 2em;
+}
+.section-networks nav div {
+  background-color: rgb(61, 61, 61);
+  padding: 2em 2.5em;
+  border-radius: 1.5em;
+  box-shadow: rgba(255, 212, 0, 0.15) 0px 4px 8px, rgba(0, 0, 0, 0.08) 0px 2px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8em;
+  width: 150px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.section-networks nav div:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: rgba(255, 212, 0, 0.3) 0px 8px 16px, rgba(0, 0, 0, 0.15) 0px 4px 8px;
+}
+.section-networks nav div:hover i {
+  transform: scale(1.15) rotate(4deg);
+}
+.section-networks nav a {
+  color: rgb(200, 200, 200);
+  transition: color 0.25s ease;
+}
+.section-networks nav a:hover .linkedin i {
+  color: #0A66C2;
+}
+.section-networks nav a:hover .github i {
+  color: #171515;
+}
+.section-networks nav i {
+  font-size: 2.3em;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+.section-networks nav p {
+  margin: 0;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: rgb(200, 200, 200);
+}
+
+.section-navbar {
+  margin: 10em auto 2em;
+  position: sticky;
+  bottom: 1em;
+  width: fit-content;
+  padding: 0.5em 1.5em;
+  background-color: rgba(81, 81, 81, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 2.5em;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+.section-navbar nav {
+  display: flex;
+  gap: 2em;
+  padding: 1.2em 0;
+}
+.section-navbar nav div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.section-navbar nav div a {
+  font-size: 1.5em;
+  color: white;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.section-navbar nav div p {
+  font-size: 0.7em;
+  margin-top: 0.3em;
+  opacity: 0.7;
+}
+.section-navbar nav div:hover {
+  transform: translateY(-3px);
+}
+.section-navbar nav div:hover a {
+  color: #ffd400;
+  transform: scale(1.2);
+}
+.section-navbar nav div:hover p {
+  opacity: 1;
+  color: #ffd400;
+}
+
+footer {
+  border-top: solid 1px rgb(200, 200, 200);
+}
+footer p {
+  margin: 0;
+}
+
+.section-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+.section-details img {
+  width: 100%;
+  height: auto;
+  border-radius: 1em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.section-details h2 {
+  font-size: 1.6rem;
+  margin: 0;
+  color: rgb(255, 212, 0);
+  text-align: center;
+}
+.section-details > p {
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+.section-details div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+.section-details div .labels {
+  background-color: rgb(255, 146, 30);
+  color: rgb(31, 31, 31);
+  border-radius: 1em;
+  padding: 0.4em 0.8em;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.section-details div .labels:hover {
+  transform: translateY(-3px);
+  background-color: #ffa342;
+}
+.section-details .p-desc {
+  line-height: 1.6;
+  font-size: 0.95rem;
+  opacity: 0.9;
+  text-align: justify;
+}
+.section-details .link-projects {
+  margin: 1rem auto 0;
+  display: inline-block;
+  background-color: rgb(255, 212, 0);
+  color: rgb(31, 31, 31);
+  padding: 0.8rem 1.6rem;
+  border-radius: 2em;
+  font-weight: 600;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  text-align: center;
+}
+.section-details .link-projects:hover {
+  background-color: rgb(215, 172, 0);
+  transform: translateY(-3px);
+}
+
+.section-connexion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: rgb(31, 31, 31);
+  font-family: "Montserrat", sans-serif;
+  color: rgb(200, 200, 200);
+}
+.section-connexion h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: rgb(255, 212, 0);
+  margin-bottom: 2em;
+  width: 100%;
+}
+.section-connexion p.error-message {
+  color: red;
+  text-align: center;
+  margin: 0;
+  font-weight: 600;
+}
+.section-connexion form {
+  background-color: rgb(61, 61, 61);
+  padding: 2.5em 3em;
+  border-radius: 2em;
+  box-shadow: rgba(255, 212, 0, 0.15) 0px 4px 8px, rgba(0, 0, 0, 0.08) 0px 2px 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  width: 100%;
+  max-width: 400px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.section-connexion form:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: rgba(255, 212, 0, 0.3) 0px 8px 16px, rgba(0, 0, 0, 0.15) 0px 4px 8px;
+}
+.section-connexion form label {
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+.section-connexion form input {
+  padding: 0.9em 1em;
+  border-radius: 1em;
+  border: 2px solid transparent;
+  background-color: rgb(71, 71, 71);
+  color: rgb(200, 200, 200);
+  font-size: 1em;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.section-connexion form input:focus {
+  outline: none;
+  border-color: rgb(255, 212, 0);
+  box-shadow: 0 0 8px rgba(255, 212, 0, 0.25);
+}
+.section-connexion form button {
+  padding: 0.8em 1.5em;
+  border-radius: 1em;
+  background-color: rgb(255, 212, 0);
+  color: rgb(31, 31, 31);
+  font-weight: 600;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.section-connexion form button:hover {
+  background-color: rgb(215, 172, 0);
+  transform: translateY(-2px);
+}
+.section-connexion form button:active {
+  transform: translateY(0);
+}
+
+.section-dashboard {
+  padding: 2em 1.5em;
+  max-width: 1100px;
+  margin: auto;
+  /* Header */
+  /* USER CARD */
+  /* ADD PROJECT BUTTON */
+  /* PROJECT GRID */
+  /* PROJECT CARD */
+}
+.section-dashboard h2 {
+  margin-bottom: 1em;
+  font-size: 1.7em;
+  font-weight: 700;
+}
+.section-dashboard .dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+.section-dashboard .dashboard-header .btn-edit-profile {
+  background: #ffd400;
+  color: white;
+  padding: 0.4em 1em;
+  border-radius: 0.6em;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s;
+}
+.section-dashboard .dashboard-header .btn-edit-profile:hover {
+  background: #ccaa00;
+}
+.section-dashboard .user-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5em;
+  border-radius: 1.2em;
+  box-shadow: rgba(255, 212, 0, 0.15) 0px 4px 8px, rgba(0, 0, 0, 0.08) 0px 2px 4px;
+  margin-bottom: 2em;
+  background-color: rgb(61, 61, 61);
+}
+.section-dashboard .user-card .photo-cv {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1em;
+}
+.section-dashboard .user-card .user-info {
+  text-align: center;
+}
+.section-dashboard .user-card .user-info .name {
+  font-size: 1.3em;
+  font-weight: 700;
+  margin-bottom: 0.3em;
+}
+.section-dashboard .user-card .user-info .description {
+  font-style: italic;
+  margin-bottom: 1em;
+}
+.section-dashboard .user-card .user-info span {
+  font-weight: 600;
+}
+.section-dashboard .btn-add-project {
+  display: inline-block;
+  background: #1cc88a;
+  color: white;
+  padding: 0.5em 1.2em;
+  border-radius: 0.7em;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.section-dashboard .btn-add-project:hover {
+  background: #169b6b;
+}
+.section-dashboard .projects-grid {
+  display: grid;
+  gap: 1.5em;
+}
+.section-dashboard .project-card {
+  border-radius: 1.2em;
+  box-shadow: rgba(255, 212, 0, 0.15) 0px 4px 8px, rgba(0, 0, 0, 0.08) 0px 2px 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(61, 61, 61);
+}
+.section-dashboard .project-card .project-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.section-dashboard .project-card .project-content {
+  padding: 1em;
+}
+.section-dashboard .project-card .project-content h3 {
+  margin-bottom: 0.5em;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+.section-dashboard .project-card .project-content .category span,
+.section-dashboard .project-card .project-content .labels-block span {
+  font-weight: 600;
+}
+.section-dashboard .project-card .labels-list {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin: 0.5em 0 1em;
+}
+.section-dashboard .project-card .labels-list .label-item {
+  background: rgb(255, 146, 30);
+  padding: 0.3em 0.7em;
+  border-radius: 1em;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+.section-dashboard .project-card .btn-discover {
+  display: inline-block;
+  background: #ffd400;
+  color: white;
+  padding: 0.4em 1em;
+  border-radius: 0.7em;
+  text-decoration: none;
+  transition: 0.25s;
+}
+.section-dashboard .project-card .btn-discover:hover {
+  background: #ccaa00;
+}
+.section-dashboard .project-card .project-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  padding: 0.8em 1em;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.section-dashboard .project-card .project-actions a {
+  font-weight: 600;
+  text-decoration: none;
+}
+.section-dashboard .project-card .project-actions .action-edit {
+  color: #ffd400;
+}
+.section-dashboard .project-card .project-actions .action-edit:hover {
+  text-decoration: underline;
+}
+.section-dashboard .project-card .project-actions .action-delete {
+  color: #e74a3b;
+}
+.section-dashboard .project-card .project-actions .action-delete:hover {
+  text-decoration: underline;
+}
+
+.section-edit-profile {
+  margin-top: 5em;
+  padding: 2rem;
+  font-family: "Montserrat", sans-serif;
+  color: rgb(200, 200, 200);
+}
+.section-edit-profile h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: rgb(255, 212, 0);
+  margin-bottom: 2em;
+}
+.section-edit-profile form {
+  background-color: rgb(61, 61, 61);
+  padding: 2.5em 3em;
+  border-radius: 2em;
+  box-shadow: rgba(255, 212, 0, 0.15) 0px 4px 8px, rgba(0, 0, 0, 0.08) 0px 2px 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  max-width: 600px;
+  margin: 0 auto;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.section-edit-profile form:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: rgba(255, 212, 0, 0.3) 0px 8px 16px, rgba(0, 0, 0, 0.15) 0px 4px 8px;
+}
+.section-edit-profile form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.section-edit-profile form div label {
+  font-weight: 600;
+  color: rgb(255, 212, 0);
+}
+.section-edit-profile form div input,
+.section-edit-profile form div textarea {
+  padding: 0.8em 1em;
+  border-radius: 1em;
+  border: 2px solid transparent;
+  background-color: rgb(71, 71, 71);
+  color: rgb(200, 200, 200);
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+.section-edit-profile form div textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.section-edit-profile form div input[type=file] {
+  padding: 0.3em;
+}
+.section-edit-profile form div input:focus,
+.section-edit-profile form div textarea:focus {
+  outline: none;
+  border-color: rgb(255, 212, 0);
+  box-shadow: 0 0 8px rgba(255, 212, 0, 0.25);
+}
+.section-edit-profile form button {
+  padding: 0.8em 1.5em;
+  border-radius: 1em;
+  background-color: rgb(255, 212, 0);
+  color: rgb(31, 31, 31);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.section-edit-profile form button:hover {
+  background-color: rgb(215, 172, 0);
+  transform: translateY(-2px);
+}
+.section-edit-profile form button:active {
+  transform: translateY(0);
+}
+.section-edit-profile .success-message {
+  color: #4CAF50;
+  text-align: center;
+  font-weight: 600;
+}
+.section-edit-profile .error-message {
+  color: red;
+  text-align: center;
+  font-weight: 600;
+}
+
+.section-edit-project {
+  margin: 5em auto 5em;
+  max-width: 800px;
+  padding: 2em;
+  background-color: rgb(61, 61, 61);
+  border-radius: 2em;
+  box-shadow: rgba(255, 212, 0, 0.15) 0px 4px 8px, rgba(0, 0, 0, 0.08) 0px 2px 4px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.section-edit-project:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: rgba(255, 212, 0, 0.3) 0px 8px 16px, rgba(0, 0, 0, 0.15) 0px 4px 8px;
+}
+.section-edit-project h2 {
+  text-align: center;
+  color: rgb(255, 212, 0);
+  margin-bottom: 2em;
+}
+.section-edit-project .error-message {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1em;
+}
+.section-edit-project form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8em;
+}
+.section-edit-project form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.section-edit-project form div label {
+  font-weight: 600;
+  color: rgb(200, 200, 200);
+}
+.section-edit-project form div input[type=text],
+.section-edit-project form div select,
+.section-edit-project form div textarea,
+.section-edit-project form div input[type=file] {
+  padding: 0.8em 1em;
+  border-radius: 1em;
+  border: 1px solid rgb(71, 71, 71);
+  background-color: rgb(71, 71, 71);
+  color: rgb(200, 200, 200);
+  font-size: 1em;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+.section-edit-project form div input[type=text]:focus,
+.section-edit-project form div select:focus,
+.section-edit-project form div textarea:focus,
+.section-edit-project form div input[type=file]:focus {
+  border-color: rgb(255, 212, 0);
+  box-shadow: 0 0 5px rgba(255, 212, 0, 0.5);
+}
+.section-edit-project form div textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.section-edit-project form div .checkbox-labels {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.8em;
+  margin-top: 0.5em;
+}
+.section-edit-project form div .checkbox-labels label {
+  background-color: rgb(255, 146, 30);
+  color: rgb(31, 31, 31);
+  border-radius: 1em;
+  padding: 0.6em 0.7em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.9em;
+  font-weight: 600;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+.section-edit-project form div .checkbox-labels label input[type=checkbox] {
+  transform: scale(1.15);
+  cursor: pointer;
+}
+.section-edit-project form div .checkbox-labels label:hover {
+  background-color: rgb(215, 172, 0);
+  transform: translateY(-3px);
+}
+.section-edit-project form div img.preview-image {
+  margin-top: 0.5em;
+  width: 40%;
+  border-radius: 1em;
+  border: 1px solid rgb(200, 200, 200);
+  box-shadow: rgba(255, 212, 0, 0.15) 0px 4px 8px, rgba(0, 0, 0, 0.08) 0px 2px 4px;
+}
+.section-edit-project form button {
+  width: fit-content;
+  align-self: center;
+  padding: 0.8em 1.5em;
+  font-size: 1em;
+  font-weight: 600;
+  border-radius: 1em;
+  background-color: rgb(255, 212, 0);
+  color: rgb(31, 31, 31);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.section-edit-project form button:hover {
+  background-color: rgb(215, 172, 0);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .article-introduction {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+    text-align: left;
+  }
+  .article-introduction .photo-cv {
+    width: 220px;
+    flex-shrink: 0;
+  }
+  .article-introduction p {
+    text-align: left;
+  }
+  .section-projects .div-projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .section-skills .div-webdev,
+  .section-skills .div-transversal {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .section-dashboard .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .section-edit-project .checkbox-labels {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1em;
+  }
+  .section-edit-project .checkbox-labels label {
+    font-size: 1em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .article-introduction {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+    text-align: left;
+  }
+  .article-introduction .photo-cv {
+    width: 220px;
+    flex-shrink: 0;
+  }
+  .article-introduction p {
+    text-align: left;
+  }
+  .section-projects .div-projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .section-skills .div-webdev,
+  .section-skills .div-transversal {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .section-dashboard .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .section-dashboard .user-card {
+    flex-direction: row;
+    text-align: left;
+  }
+  .section-dashboard .user-card .user-info {
+    margin-left: 1.5em;
+  }
+  .section-edit-project .checkbox-labels {
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 1.2em;
+  }
+  .section-edit-project .checkbox-labels label {
+    padding: 0.7em 1em;
+    font-size: 1.05em;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

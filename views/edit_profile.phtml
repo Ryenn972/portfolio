@@ -1,0 +1,50 @@
+<section class="section-edit-profile">
+    <h2>Edit Profile</h2>
+
+    <?php if (isset($successMessage)): ?>
+        <p class="success-message"><?= htmlspecialchars($successMessage) ?></p>
+    <?php endif; ?>
+
+    <?php if (isset($errorMessage)): ?>
+        <p class="error-message"><?= htmlspecialchars($errorMessage) ?></p>
+    <?php endif; ?>
+
+    <form action="index.php?route=edit_profile_submit" method="POST" enctype="multipart/form-data">
+        <div>
+            <label for="firstname">First Name:</label>
+            <input type="text" name="firstname" value="<?= htmlspecialchars($user->getFirstname()) ?>" required>
+        </div>
+
+        <div>
+            <label for="lastname">Last Name:</label>
+            <input type="text" name="lastname" value="<?= htmlspecialchars($user->getLastname()) ?>" required>
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" value="<?= htmlspecialchars($user->getEmail()) ?>" required>
+        </div>
+
+        <div>
+            <label for="phone">Phone:</label>
+            <input type="text" name="phone" value="<?= htmlspecialchars($user->getPhoneNumber()) ?>">
+        </div>
+
+        <div>
+            <label for="birthdate">Birthdate:</label>
+            <input type="date" name="birthdate" value="<?= htmlspecialchars($user->getBirthdate()) ?>">
+        </div>
+
+        <div>
+            <label for="description">Profile Description:</label>
+            <textarea name="description"><?= nl2br(html_entity_decode($user->getProfileDescription(), ENT_QUOTES | ENT_HTML5)) ?></textarea>
+        </div>
+
+        <div>
+            <label for="profilePicture">Profile Picture:</label>
+            <input type="file" name="profilePicture" accept="image/*">
+        </div>
+
+        <button type="submit">Save Changes</button>
+    </form>
+</section>

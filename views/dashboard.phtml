@@ -1,0 +1,57 @@
+<section class="section-dashboard">
+    <h2>Dashboard</h2>
+
+    <div class="dashboard-header">
+        <h3>Your data</h3>
+        <a href="index.php?route=edit_profile" class="btn-edit-profile">Edit</a>
+    </div>
+
+    <div class="user-card">
+        <img src="assets/img/<?= htmlspecialchars($user->getProfilePicture()) ?>" alt="Profile picture" class="photo-cv">
+
+        <div class="user-info">
+            <p class="name"><?= htmlspecialchars($user->getFirstname()) ?> <?= htmlspecialchars($user->getLastname()) ?></p>
+            <p class="description"><?= nl2br(html_entity_decode($user->getProfileDescription(), ENT_QUOTES | ENT_HTML5)) ?></p>
+
+            <p><span>Birthdate :</span> <?= htmlspecialchars($user->getBirthdate()) ?></p>
+            <p><span>Email :</span> <?= htmlspecialchars($user->getEmail()) ?></p>
+            <p><span>Phone :</span> <?= htmlspecialchars($user->getPhoneNumber()) ?></p>
+        </div>
+    </div>
+
+    <div class="projects-grid">
+        <?php foreach ($projectsArray as $project): ?>
+        <article class="project-card">
+            <img src="assets/img/<?= htmlspecialchars($project->getProjectImg()) ?>" class="project-img" alt="Image du projet">
+
+            <div class="project-content">
+                <h3><?= htmlspecialchars($project->getTitle()) ?></h3>
+
+                <p class="category">
+                    <span>Category :</span> <?= htmlspecialchars($project->getCategoryName()) ?>
+                </p>
+
+                <div class="labels-block">
+                    <p><span>Labels :</span></p>
+                    <div class="labels-list">
+                        <?php foreach ($project->getLabels() as $label): ?>
+                            <span class="label-item"><?= htmlspecialchars($label['name']) ?></span>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+
+                <a href="index.php?route=project_details&id=<?= $project->getId() ?>" class="btn-discover">
+                    Discover
+                </a>
+            </div>
+
+            <div class="project-actions">
+                <a href="index.php?route=edit_project&id=<?= $project->getId() ?>" class="action-edit">Edit</a>
+                <a href="index.php?route=delete_project&id=<?= $project->getId() ?>" class="action-delete">Delete</a>
+            </div>
+        </article>
+        <?php endforeach; ?>
+    </div>
+    
+    <a href="index.php?route=add_project" class="btn-add-project">+ Add Project</a>
+</section>

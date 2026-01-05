@@ -1,0 +1,17 @@
+<section class="section-connexion">
+    <h2>Connexion</h2>
+
+    <?php if (isset($_GET['error2'])): ?>
+        <p class="error-message">Identifiants incorrects.</p>
+    <?php endif; ?>
+
+    <form action="index.php?route=login_submit" method="POST">
+        <label for="email">Email :</label>
+        <input type="email" name="email" placeholder="Ex: jean@example.com" required>
+
+        <label for="password">Password :</label>
+        <input type="password" name="password" placeholder="******" required>
+
+        <button type="submit">Log in</button>
+    </form>
+</section>

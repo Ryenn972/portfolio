@@ -1,0 +1,12 @@
+<section class="section-details">
+    <img src="assets/img/<?= htmlspecialchars($projectsArray->getProjectImg()) ?>" alt="Image du projet '<?= htmlspecialchars($projectsArray->getTitle()) ?>' ">
+    <h2><?= htmlspecialchars($projectsArray->getTitle()) ?></h2>
+    <p>Category : <?= htmlspecialchars($projectsArray->getCategoryName()) ?></p>
+    <div>
+        <?php foreach ($projectsArray->getLabels() as $label): ?>
+            <p class="labels"><?= htmlspecialchars($label['name']) ?></p>
+        <?php endforeach; ?>
+    </div>
+    <p class="p-desc"><?= htmlspecialchars($projectsArray->getProjectDescription()) ?></p>
+    <a href="<?= htmlspecialchars($projectsArray->getProjectLink()) ?>" target="_blank" class="link-projects">Try it !</a>
+</section>
