@@ -1,0 +1,272 @@
+/* ==========================================================================
+   CV — mise en page classique (fidèle au PDF), fichier dédié
+   Palette propre au CV : sombre + or, distincte du thème solaire du portfolio
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Variables locales au CV
+   -------------------------------------------------------------------------- */
+:root{
+  --cv-dark: #1B1B1D;
+  --cv-dark-soft: #242426;
+  --cv-gold: #C9A24B;
+  --cv-white: #FFFFFF;
+  --cv-text: #1F1F1F;
+  --cv-text-dim: #6B6B6B;
+  --cv-border: #E7E4DD;
+  --cv-sidebar-width: 320px;
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset & base
+   -------------------------------------------------------------------------- */
+.cv-page *{ box-sizing: border-box; }
+
+body.cv-body{
+  margin: 0;
+  background: #EDEBE5;
+  font-family: 'Inter', sans-serif;
+  color: var(--cv-text); /* overrides style.css's light-on-dark body color */
+  padding-bottom: 0; /* no fixed dock nav on this page */
+}
+
+/* Neutralise style.css's generic `section` rule (padding/border for the
+   solar-themed sections) so it doesn't leak into the CV layout */
+.cv-main section{
+  padding: 0;
+  border-bottom: none;
+  scroll-margin-top: 0;
+}
+
+/* Top bar shared with portfolio, restyled for a light page */
+.cv-body .topbar{
+  background: var(--cv-white);
+  border-bottom: 1px solid var(--cv-border);
+}
+.cv-body .topbar .logo{ color: var(--cv-text); }
+.cv-body .topbar .badge{
+  background: rgba(201,162,75,0.12);
+  border-color: rgba(201,162,75,0.3);
+  color: #8A6E2F;
+}
+.cv-body .back-link{
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--cv-text-dim);
+  text-decoration: none;
+}
+.cv-body .back-link:hover{ color: var(--cv-gold); }
+
+/* --------------------------------------------------------------------------
+   3. Page wrapper (approximates an A4 sheet)
+   -------------------------------------------------------------------------- */
+.cv-wrap{ padding: 28px 5vw 60px; }
+
+.cv-page{
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--cv-white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+}
+
+.cv-actions{
+  max-width: 1000px;
+  margin: 0 auto 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+.cv-print-btn{
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cv-white);
+  background: var(--cv-dark);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.cv-print-btn:hover{ background: var(--cv-gold); color: #201a08; }
+
+/* --------------------------------------------------------------------------
+   4. Sidebar (dark column)
+   -------------------------------------------------------------------------- */
+.cv-sidebar{
+  background: var(--cv-dark);
+  color: var(--cv-white);
+  padding: 40px 28px;
+}
+
+.cv-photo{
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 22px;
+  border: 3px solid var(--cv-gold);
+}
+.cv-photo img{ width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.cv-identity{ text-align: center; margin-bottom: 30px; }
+.cv-identity h1{
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+.cv-identity p{ font-size: 13px; color: #B7B5B0; }
+
+.cv-side-block{ margin-bottom: 30px; }
+.cv-side-block:last-child{ margin-bottom: 0; }
+
+.cv-side-title{
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+  border-bottom: 2px solid var(--cv-gold);
+}
+
+.cv-side-block ul{ list-style: none; padding: 0; margin: 0; }
+.cv-side-block li{
+  font-size: 13px;
+  color: #D8D6D1;
+  margin-bottom: 9px;
+  line-height: 1.5;
+  word-break: break-word;
+}
+.cv-side-block li a{ color: #D8D6D1; text-decoration: none; }
+.cv-side-block li a:hover{ color: var(--cv-gold); }
+.cv-side-block li strong{ color: var(--cv-white); font-weight: 500; }
+
+/* --------------------------------------------------------------------------
+   5. Main content (light column)
+   -------------------------------------------------------------------------- */
+.cv-main{ padding: 40px 40px 48px; }
+
+.cv-heading{ text-align: left; margin-bottom: 22px; }
+.cv-heading h2{
+  font-family: 'Poppins', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.cv-heading .role{ font-size: 16px; color: var(--cv-text-dim); margin-top: 2px; }
+.cv-heading .search-note{
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--cv-text-dim);
+  background: #F6F4EE;
+  border: 1px solid var(--cv-border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  line-height: 1.55;
+}
+
+.cv-section{ margin-bottom: 32px; }
+.cv-section:last-child{ margin-bottom: 0; }
+
+.cv-section-title{
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding-bottom: 8px;
+  margin-bottom: 18px;
+  border-bottom: 2px solid var(--cv-dark);
+}
+
+/* Timeline items reused for formation / experience */
+.cv-timeline{ list-style: none; padding: 0; margin: 0; position: relative; }
+.cv-entry{
+  position: relative;
+  padding-left: 22px;
+  padding-bottom: 22px;
+}
+.cv-entry:last-child{ padding-bottom: 0; }
+.cv-entry::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--cv-gold);
+}
+.cv-entry::after{
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 14px;
+  bottom: 0;
+  width: 1px;
+  background: var(--cv-border);
+}
+.cv-entry:last-child::after{ display: none; }
+
+.cv-entry-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+}
+.cv-entry-top h3{ font-size: 15px; font-weight: 600; }
+.cv-entry-date{
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--cv-gold);
+  white-space: nowrap;
+}
+.cv-entry-org{ font-size: 13px; color: var(--cv-text-dim); margin: 2px 0 8px; }
+.cv-entry ul{ margin: 0; padding-left: 18px; }
+.cv-entry li{ font-size: 13px; color: #444; margin-bottom: 4px; line-height: 1.5; }
+.cv-entry p.cv-entry-desc{ font-size: 13px; color: #444; line-height: 1.5; }
+
+/* --------------------------------------------------------------------------
+   6. Responsive — stack sidebar above content on narrow screens
+   -------------------------------------------------------------------------- */
+@media (max-width: 760px){
+  .cv-page{ flex-direction: column; }
+  .cv-sidebar{ padding: 32px 24px; }
+  .cv-main{ padding: 32px 24px 40px; }
+  .cv-actions{ justify-content: center; }
+}
+
+/* --------------------------------------------------------------------------
+   7. Desktop — true two-column layout
+   -------------------------------------------------------------------------- */
+@media (min-width: 761px){
+  .cv-page{ flex-direction: row; }
+  .cv-sidebar{ width: var(--cv-sidebar-width); flex-shrink: 0; }
+  .cv-main{ flex: 1; }
+}
+
+/* --------------------------------------------------------------------------
+   8. Print — one clean A4 page, no chrome/nav/shadow
+   -------------------------------------------------------------------------- */
+@media print{
+  @page{ size: A4; margin: 0; }
+  body.cv-body{ background: var(--cv-white); }
+  .topbar, .cv-actions, .dock{ display: none !important; }
+  .cv-wrap{ padding: 0; }
+  .cv-page{
+    box-shadow: none;
+    border-radius: 0;
+    max-width: none;
+    flex-direction: row;
+  }
+  .cv-sidebar{ width: 220px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
