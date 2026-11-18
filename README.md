@@ -1,6 +1,6 @@
 # Ryenn MITH--CATAN — Portfolio
 
-Portfolio personnel de Ryenn MITH--CATAN, étudiant en Bachelor Développeur Fullstack à 3W Academy, à la recherche d'une alternance à partir d'octobre 2026.
+Portfolio personnel de Ryenn MITH--CATAN, étudiant en Bachelor Développeur Fullstack à 3W Academy, à la recherche d'une alternance dès que possible.
 
 Site statique en HTML/CSS/JS pur, sans dépendance ni framework, hébergé sur GitHub Pages.
 
